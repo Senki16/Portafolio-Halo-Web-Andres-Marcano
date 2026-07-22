@@ -1,0 +1,11 @@
+# Archivos fuente originales (pesados) — no se despliegan
+_source/
+Background video/
+
+# Vercel
+.vercel
+
+# Sistema
+.DS_Store
+Thumbs.db
+node_modules/

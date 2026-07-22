@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Andrés G. García Marcano — Portafolio</title>
+<meta name="description" content="Portafolio de Andrés Gerardo García Marcano, estudiante de Ingeniería Mecánica (EAFIT). Diseño mecánico, simulación FEA y modelado CAD." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@300;400;500;600;700&family=Saira:wght@300;400;500;600&family=Chakra+Petch:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- animated video background -->
+<video id="bgvid" class="bg-video" autoplay muted loop playsinline
+       poster="assets/menu-bg.jpg" preload="auto" aria-hidden="true">
+  <source src="assets/bg.mp4" type="video/mp4" />
+</video>
+<div class="bg-overlay" aria-hidden="true"></div>
+
+<!-- ambient audio -->
+<audio id="theme" src="assets/theme.mp3" loop preload="auto"></audio>
+
+<!-- scanline / grain overlays -->
+<div class="fx-scanlines" aria-hidden="true"></div>
+<div class="fx-vignette" aria-hidden="true"></div>
+
+<!-- ================= BOOT / TITLE SCREEN ================= -->
+<section id="boot" class="screen boot active">
+  <div class="boot-inner">
+    <h1 class="halo-title">PORTAFOLIO</h1>
+    <p class="halo-name">de Andrés G. García Marcano</p>
+    <p class="press-key">PRESIONA CUALQUIER TECLA PARA CONTINUAR</p>
+  </div>
+</section>
+
+<!-- ================= MAIN MENU ================= -->
+<main id="app" class="screen">
+
+  <header class="topbar">
+    <div class="ident">
+      <span class="ident-name">ANDRÉS G. GARCÍA MARCANO</span>
+      <span class="ident-role">Estudiante de Ingeniería Mecánica · EAFIT</span>
+    </div>
+    <button id="muteBtn" class="mute" title="Silenciar / Activar música" aria-label="Silenciar música">
+      <span class="mute-ico">♪</span> <span class="mute-txt">AUDIO</span>
+    </button>
+  </header>
+
+  <div class="menu-layout">
+
+    <!-- LEFT: navigation -->
+    <nav class="menu" aria-label="Menú principal">
+      <ul id="menuList">
+        <li class="menu-item active" data-target="perfil">PERFIL</li>
+        <li class="menu-item" data-target="educacion">EDUCACIÓN</li>
+        <li class="menu-item" data-target="experiencia">EXPERIENCIA</li>
+        <li class="menu-item" data-target="proyectos">PROYECTOS</li>
+        <li class="menu-item" data-target="habilidades">HABILIDADES</li>
+        <li class="menu-item" data-target="actividades">ACTIVIDADES</li>
+        <li class="menu-item" data-target="logros">LOGROS</li>
+        <li class="menu-item" data-target="contacto">CONTACTO</li>
+      </ul>
+      <a class="menu-cv" href="cv.pdf" target="_blank" rel="noopener">▸ DESCARGAR CV (PDF)</a>
+    </nav>
+
+    <!-- RIGHT: content panels -->
+    <section class="content" id="content">
+
+      <!-- PERFIL -->
+      <article class="panel active" id="perfil">
+        <h2 class="panel-title">PERFIL</h2>
+        <figure class="profile-figure">
+          <img src="assets/profile.jpg" alt="Andrés Gerardo García Marcano" />
+          <span class="corner tl"></span><span class="corner tr"></span>
+          <span class="corner bl"></span><span class="corner br"></span>
+          <figcaption>ANDRÉS G. GARCÍA MARCANO</figcaption>
+        </figure>
+        <p class="lead">
+          Estudiante de Ingeniería Mecánica con experiencia en modelado y análisis de
+          componentes mecánicos y estructurales, así como en el desarrollo de procesos de
+          dibujo y diseño.
+        </p>
+        <p>
+          Reconocido por sólidas habilidades en planeación, trabajo en equipo, ética
+          profesional, precisión y responsabilidad. Competente en herramientas de simulación
+          FEA, modelado CAD y aplicación de dimensionamiento y tolerancias geométricas (GD&amp;T).
+        </p>
+        <p>
+          Interesado en el diseño mecánico y la simulación, con enfoque en el desarrollo de
+          sistemas eficientes y optimizados para los sectores aeroespacial, de transporte e
+          infraestructura.
+        </p>
+        <div class="chips">
+          <span class="chip">Diseño Mecánico</span>
+          <span class="chip">Simulación FEA</span>
+          <span class="chip">Modelado CAD</span>
+          <span class="chip">GD&amp;T</span>
+        </div>
+      </article>
+
+      <!-- EDUCACIÓN -->
+      <article class="panel" id="educacion">
+        <h2 class="panel-title">EDUCACIÓN</h2>
+        <div class="entry">
+          <div class="entry-head">
+            <h3>Pregrado en Ingeniería Mecánica</h3>
+            <span class="entry-date">Julio 2021 — Presente</span>
+          </div>
+          <p class="entry-org">Universidad EAFIT · Medellín, Colombia</p>
+          <ul class="dashed">
+            <li>Escuela de Ciencias Aplicadas e Ingeniería</li>
+            <li>Promedio acumulado (CGPA): <strong>4.11 / 5.00</strong></li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- EXPERIENCIA -->
+      <article class="panel" id="experiencia">
+        <h2 class="panel-title">EXPERIENCIA</h2>
+        <div class="entry">
+          <div class="entry-head">
+            <h3>Proworks Colombia S.A.S.</h3>
+            <span class="entry-date">Jul. 2023 — Presente</span>
+          </div>
+          <p class="entry-org">Medellín, Colombia · Empresa especializada en líneas de vida</p>
+          <ul class="dashed">
+            <li>Modelado CAD, análisis estático y documentación técnica para sistemas de líneas de vida.</li>
+            <li>4 proyectos de diseño y análisis de líneas de vida · <strong>300+ metros instalados</strong>.</li>
+            <li>2 proyectos estructurales (metal y madera).</li>
+            <li>Dibujo de componentes de alta precisión.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- PROYECTOS -->
+      <article class="panel" id="proyectos">
+        <h2 class="panel-title">PROYECTOS ACADÉMICOS</h2>
+
+        <div class="entry">
+          <div class="entry-head">
+            <h3>Diseño de Máquinas 2</h3>
+            <span class="entry-date">Ene. 2025 — Presente</span>
+          </div>
+          <p>Diseño y construcción de un vehículo eléctrico inspirado en los autos de Fórmula 1 de los años 60.</p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <h3>Diseño de Máquinas 1</h3>
+            <span class="entry-date">Ene. 2024 — May. 2024</span>
+          </div>
+          <p>Desarrollo de un router CNC con tres grados de libertad y actuación lineal.</p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <h3>Método de Elementos Finitos</h3>
+            <span class="entry-date">Jul. 2023 — Nov. 2023</span>
+          </div>
+          <p>Verificación y validación de un modelo de elementos finitos de una grúa hidráulica de 2 toneladas.</p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <h3>Mecanismos</h3>
+            <span class="entry-date">Ene. 2023 — Jun. 2023</span>
+          </div>
+          <p>Diseño y construcción de un vehículo de propulsión humana aplicando los conceptos del curso.</p>
+        </div>
+      </article>
+
+      <!-- HABILIDADES -->
+      <article class="panel" id="habilidades">
+        <h2 class="panel-title">HABILIDADES</h2>
+        <div class="skill-grid">
+          <div class="skill-block">
+            <h4>Software CAD/CAE</h4>
+            <div class="chips">
+              <span class="chip">SolidWorks</span>
+              <span class="chip">Inventor</span>
+            </div>
+          </div>
+          <div class="skill-block">
+            <h4>Programación</h4>
+            <div class="chips">
+              <span class="chip">MATLAB</span>
+              <span class="chip">Python</span>
+              <span class="chip">Arduino</span>
+              <span class="chip">LaTeX</span>
+            </div>
+          </div>
+          <div class="skill-block">
+            <h4>Ofimática</h4>
+            <div class="chips">
+              <span class="chip">Microsoft 365</span>
+            </div>
+          </div>
+          <div class="skill-block">
+            <h4>Habilidades blandas</h4>
+            <div class="chips">
+              <span class="chip">Gestión del tiempo</span>
+              <span class="chip">Colaboración interdisciplinaria</span>
+              <span class="chip">Resolución de problemas</span>
+              <span class="chip">Adaptabilidad</span>
+              <span class="chip">Aprendizaje continuo</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ACTIVIDADES -->
+      <article class="panel" id="actividades">
+        <h2 class="panel-title">ACTIVIDADES EXTRACURRICULARES</h2>
+
+        <div class="entry">
+          <div class="entry-head">
+            <h3>Programa Kratos</h3>
+            <span class="entry-date">Ene. 2022 — Nov. 2024</span>
+          </div>
+          <p class="entry-org">Universidad EAFIT · Medellín, Colombia</p>
+          <ul class="dashed">
+            <li>Líder de Proceso de Diseño de un Vehículo de Propulsión Humana (HPV) en aluminio · 2024</li>
+            <li>Líder de Diseño y Manufactura de Chasis para un Vehículo Eléctrico (EPV) · 2023</li>
+            <li>Miembro del Equipo de Diseño en el desarrollo conceptual de un HPV · 2022</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <h3>Monitor · Análisis Funcional de Máquinas</h3>
+            <span class="entry-date">Ene. 2025 — Presente</span>
+          </div>
+          <p class="entry-org">Universidad EAFIT · Medellín, Colombia</p>
+          <ul class="dashed">
+            <li>Creación de documentación guía para procesos de diseño con análisis dimensional, cinemático, estático y dinámico de mecanismos.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <h3>Monitor · Dibujo Técnico</h3>
+            <span class="entry-date">Ene. 2022 — May. 2024</span>
+          </div>
+          <p class="entry-org">Universidad EAFIT · Medellín, Colombia</p>
+          <ul class="dashed">
+            <li>Acompañamiento en clase para resolución de dudas y facilitación de talleres semanales.</li>
+            <li>Revisión de tareas y retroalimentación para mejorar los resultados de aprendizaje.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <h3>Representante Estudiantil · Pregrado de Ing. Mecánica</h3>
+            <span class="entry-date">Jul. 2023 — Jul. 2024</span>
+          </div>
+          <p class="entry-org">Universidad EAFIT · Medellín, Colombia</p>
+          <ul class="dashed">
+            <li>Enlace entre el comité del programa y los estudiantes para apoyar el pregrado y la institución.</li>
+            <li>Organización de una competencia de SolidWorks con más de 40 participantes.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <h3>Semillero de Turbomáquinas</h3>
+            <span class="entry-date">Ene. 2023 — May. 2023</span>
+          </div>
+          <p class="entry-org">Universidad EAFIT · Medellín, Colombia</p>
+          <ul class="dashed">
+            <li>Estudio de una máquina de inducción asíncrona operando como motor y como generador.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- LOGROS -->
+      <article class="panel" id="logros">
+        <h2 class="panel-title">LOGROS Y RECONOCIMIENTOS</h2>
+
+        <div class="skill-block">
+          <h4>Certificaciones</h4>
+          <ul class="dashed">
+            <li>SolidWorks CSWA — Mechanical Design · Mar. 2023 · <span class="mono">C-V4LEPGDZX7</span></li>
+          </ul>
+        </div>
+
+        <div class="skill-block">
+          <h4>Premios y distinciones</h4>
+          <ul class="dashed">
+            <li>Premio Inventiva al Mejor Trabajo en Equipo · Organización Estudiantil (OE) · Jun. 2024</li>
+            <li>Ingeniero del Año · Programa Kratos · Nov. 2023</li>
+            <li>Piloto del Año · Programa Kratos · Nov. 2024</li>
+          </ul>
+        </div>
+
+        <div class="skill-block">
+          <h4>Membresías profesionales</h4>
+          <ul class="dashed">
+            <li>ASME — American Society of Mechanical Engineers · 2024</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- CONTACTO -->
+      <article class="panel" id="contacto">
+        <h2 class="panel-title">CONTACTO E IDIOMAS</h2>
+
+        <div class="skill-block">
+          <h4>Contacto</h4>
+          <ul class="dashed">
+            <li>Teléfono: <a href="tel:+573245664620">(+57) 324 566 4620</a></li>
+            <li>Correo: <a href="mailto:aggarciam@eafit.edu.co">aggarciam@eafit.edu.co</a></li>
+            <li>Ubicación: Sabaneta, Antioquia — Colombia</li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/andres-gerardo-garcia-marcano/" target="_blank" rel="noopener">andres-gerardo-garcia-marcano</a></li>
+          </ul>
+        </div>
+
+        <div class="skill-block">
+          <h4>Idiomas</h4>
+          <ul class="dashed">
+            <li>Inglés — B1 · Tracktest (CEFR) · 2023</li>
+            <li>Español — Nativo</li>
+          </ul>
+        </div>
+      </article>
+
+    </section>
+  </div>
+
+  <footer class="hintbar">
+    <span class="hint"><b>▲ ▼</b> Navegar</span>
+    <span class="hint"><b>ENTER</b> Seleccionar</span>
+    <span class="hint"><b>ESC</b> Menú</span>
+  </footer>
+</main>
+
+<script src="js/main.js"></script>
+</body>
+</html>
