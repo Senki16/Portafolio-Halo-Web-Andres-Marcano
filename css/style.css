@@ -383,15 +383,93 @@ ul.dashed li::before{
    RESPONSIVE
    ============================================================ */
 @media (max-width: 820px){
-  html,body{ overflow:auto; }
-  .screen{ position:relative; }
-  #app.active{ min-height:100dvh; }
-  .menu-layout{ grid-template-columns:1fr; }
-  .menu{ justify-content:flex-start; }
-  .menu ul{ display:flex; flex-wrap:wrap; gap:.3rem 1rem; }
-  .menu-item{ font-size:1.1rem; padding-left:.9rem; }
-  .menu-item.active{ transform:none; }
-  .content{ overflow:visible; }
+  html,body{ overflow-x:hidden; overflow-y:auto; }
+
+  /* Screens must still fill at least one full viewport on mobile —
+     switching to relative positioning (so tall content can grow the
+     page and scroll naturally) previously left them collapsed to
+     their content height, which broke vertical centering on .boot. */
+  .screen{
+    position:relative;
+    min-height:100vh;
+    min-height:100dvh;
+  }
+  #app.active{ min-height:100vh; min-height:100dvh; }
+
+  /* Boot screen: full-bleed centering, no upward nudge (the -4vh
+     desktop offset could push the title above the viewport edge on
+     short mobile screens). */
+  .boot{ padding:6vh 1.25rem; }
+  .boot-inner{ transform:none; width:100%; }
+  .halo-title{ letter-spacing:.06em; }
+
+  /* --- Top bar --- */
+  .topbar{
+    padding:1rem 1.1rem .8rem;
+    gap:.75rem;
+  }
+  .ident-name{ font-size:1.05rem; letter-spacing:.14em; }
+  .ident-role{ font-size:.72rem; }
+  .mute{ flex-shrink:0; padding:.35rem .65rem; }
+
+  /* --- Layout --- */
+  .menu-layout{
+    grid-template-columns:1fr;
+    padding:1.1rem 1.1rem 1.6rem;
+    gap:1.1rem;
+  }
+
+  /* --- Nav menu: single-column list of tappable pill buttons,
+     mirroring the desktop's vertical list instead of a cramped grid --- */
+  .menu{ display:block; }
+  .menu ul{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:.55rem;
+  }
+  .menu-item{
+    font-size:1rem;
+    letter-spacing:.08em;
+    padding:.6rem .7rem;
+    text-align:center;
+    border:1px solid var(--line);
+    border-radius:4px;
+    background:rgba(8,16,30,.45);
+  }
+  .menu-item::before{ display:none; } /* the underline dash reads oddly centered in a pill */
+  .menu-item:hover:not(.active){
+    transform:none;
+    letter-spacing:.08em;
+  }
+  .menu-item.active{
+    transform:none;
+    border-color:var(--accent);
+  }
+  .menu-item.just-selected{ animation:itemPulseMobile .5s cubic-bezier(.2,.9,.3,1.2); }
+  @keyframes itemPulseMobile{
+    0%   { transform:scale(1);    text-shadow:0 0 0 rgba(120,175,255,0); }
+    40%  { transform:scale(1.035); text-shadow:0 0 30px rgba(170,210,255,1); color:#fff; }
+    100% { transform:scale(1);    text-shadow:0 0 24px rgba(120,175,255,.85); }
+  }
+  .menu-cv{ margin:.4rem 0 0; text-align:center; }
+
+  /* --- Content --- */
+  .content{ overflow:visible; padding-right:0; }
+  .panel-title{ font-size:1.5rem; }
+  .lead{ font-size:1rem; }
+  .entry{ padding:.85rem 1rem; }
+  .skill-grid{ grid-template-columns:1fr; gap:0; }
+
   .hintbar{ display:none; }
-  .profile-figure{ float:none; margin:0 auto 1.4rem; }
+
+  /* --- Profile photo --- */
+  .profile-figure{
+    float:none;
+    width:min(220px, 60vw);
+    margin:0 auto 1.3rem;
+  }
+}
+
+@media (max-width: 380px){
+  .ident-name{ font-size:.95rem; }
 }
